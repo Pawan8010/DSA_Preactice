@@ -1,0 +1,48 @@
+public class bit {
+    public static void odd(int n){
+         
+        if((n&1)==0){
+            System.out.println("even");
+
+        }
+        else{
+            System.out.println("odd");
+        }
+    }
+    public static int getithbit(int n, int i){
+        int bit=1<<i;
+        if((n&bit)==0){
+            return 0;
+        }
+        return 1;
+    }
+      public static int setithbit(int n, int i){
+      int bit=1<<i;
+      return n|bit;
+    }
+     public static int clearithbit(int n, int i){
+      int bit=~(1<<i);
+      return n&bit;
+    }
+     public static int updateithbit(int n, int i,int nb){
+        n=n &~(1<<i) | nb<<i;
+       return n;
+
+    }
+     public static int lastithbit(int n, int i){
+      int bit=(~0)<<i;
+      return n&bit;
+    }
+     public static int rangeofclearithbit(int n, int i,int j){
+      int a=((~0)<<j+1);
+      int b=(1<<i)-1;
+      return n&(a|b);
+    }
+    public static void main(String[] args) {
+        // System.out.println(12^5);
+        // odd(3);
+        // System.out.println(clearithbit(10, 1));
+        System.out.println(rangeofclearithbit(10,2,4));
+
+    }
+}
